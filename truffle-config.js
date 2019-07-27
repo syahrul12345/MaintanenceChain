@@ -18,11 +18,13 @@
  *
  */
 
-// const HDWalletProvider = require('truffle-hdwallet-provider');
+const HDWalletProvider = require('truffle-hdwallet-provider');
+const { mnemonic, rpc } = require('./password.js')
 // const infuraKey = "fj4jll3k.....";
 //
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
+
 
 module.exports = {
   /**
@@ -36,6 +38,20 @@ module.exports = {
    */
 
   networks: {
+    development: {
+      host: "127.0.0.1",
+      port: 8545,
+      network_id: "*"
+    },
+
+    quorum: {
+      provider: function() {
+        return new HDWalletProvider(mnemonic,rpc)
+      },
+      network_id:'45111',
+      gasPrice:0,
+      type:"quorum"
+    }
     // Useful for testing. The `development` name is special - truffle uses it by default
     // if it's defined here and no other network is specified at the command line.
     // You should run a client (like ganache-cli, geth or parity) in a separate terminal
@@ -85,7 +101,7 @@ module.exports = {
   // Configure your compilers
   compilers: {
     solc: {
-      // version: "0.5.1",    // Fetch exact version from solc-bin (default: truffle's version)
+      version: "0.5.0",    // Fetch exact version from solc-bin (default: truffle's version)
       // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
       // settings: {          // See the solidity docs for advice about optimization and evmVersion
       //  optimizer: {
