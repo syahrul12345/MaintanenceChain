@@ -1,0 +1,25 @@
+{
+  "name": "maintanencechain",
+  "version": "1.0.0",
+  "description": "Distributed Ledger for Maintanence Records with a Predictive Engine",
+  "main": "node /test/test.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node /test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/syahrul12345/MaintanenceChain.git"
+  },
+  "keywords": [
+    "SIAappChallenge"
+  ],
+  "author": "Syahrul Nizam, Thomas , Phab , Jona",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/syahrul12345/MaintanenceChain/issues"
+  },
+  "homepage": "https://github.com/syahrul12345/MaintanenceChain#readme"
+}
