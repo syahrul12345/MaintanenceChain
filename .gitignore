@@ -62,3 +62,6 @@ typings/
 
 #password file
 password.js
+#build files
+build
+#
